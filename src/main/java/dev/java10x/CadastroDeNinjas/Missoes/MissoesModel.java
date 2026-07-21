@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_missoes")
 @NoArgsConstructor
@@ -14,12 +16,18 @@ import lombok.NoArgsConstructor;
 public class MissoesModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idMissoes;
+    @Column(name = "id")
+    Long id;
 
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "descricao")
     private String descricao;
+
+    @Column(name = "dificuldade")
     private DificuldadeRank dificuldade;
 
     @OneToMany(mappedBy = "missoes") //Uma missao para varios ninjas //mapped é mapiar a COLUNA que estou usando la em NinjaMOdel
-    private NinjaModel ninja;
+    private List<NinjaModel> ninja;
 }
