@@ -16,12 +16,19 @@ import java.util.List;
 public class NinjaModel {
     @Id //Pegar o atributo abaixo (Long id) e transformar em ID na tabela
     @GeneratedValue(strategy = GenerationType.IDENTITY) //organizar estregicamente por id
+    @Column(name = "id")
     private Long id;
 
+    @Column(name = "nome")
     private String nome;
 
     @Column(unique = true) //Criando um email unico para 1 usario
     private String email;
+
+    @Column(name = "img_url")
+    private String imgUrl;
+
+    @Column(name = "idade")
     private int idade;
 
     @ManyToOne //Serve para que 1 ninja tenha uma unica missao
