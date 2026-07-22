@@ -20,6 +20,7 @@ target/
 *.ipr
 .DS_Store
 
+
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
@@ -32,3 +33,4 @@ build/
 
 ### VS Code ###
 .vscode/
+.env
