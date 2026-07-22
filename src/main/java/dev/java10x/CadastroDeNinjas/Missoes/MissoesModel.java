@@ -26,7 +26,7 @@ public class MissoesModel {
     private String descricao;
 
     @Column(name = "dificuldade")
-    private DificuldadeRank dificuldade;
+    private String dificuldade;
 
     @OneToMany(mappedBy = "missoes") //Uma missao para varios ninjas //mapped é mapiar a COLUNA que estou usando la em NinjaMOdel
     private List<NinjaModel> ninja;
